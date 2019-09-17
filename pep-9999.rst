@@ -102,17 +102,17 @@ In some situations, some exceptions will not be raised as expected.
     # Before: TypeError: Subscripted generics cannot be used with class and instance checks
     # After: True
 
-    >> isinstance(Union[int,str], Union[int,str])
+    >> issubclass(Union[int,str], Union[int,str])
     # Before: TypeError: Subscripted generics cannot be used with class and instance checks
-    # After: false
+    # After: True
 
     >> issubclass(int, Union[int, str])
-    # Before: TypeError: unsupported operand type(s) for |: 'type' and 'type'
-    # After: true
+    # Before: TypeError: Subscripted generics cannot be used with class and instance checks
+    # After: True
 
     >> isinstance(42, int | str)
     # Before: TypeError: unsupported operand type(s) for |: 'type' and 'type'
-    # After: true
+    # After: True
 
 
 Dissenting Opinion
